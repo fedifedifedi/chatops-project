@@ -1,0 +1,17 @@
+---
+name: telegram_search_rule
+pack: custom
+description: "Répond aux commandes /search sur Telegram"
+enabled: true
+trigger:
+  type: custom.message
+  parameters: {}
+criteria:
+  trigger.body.message.text:
+    pattern: "^/search"
+    type: "startswith"
+action:
+  ref: custom.telegram_search
+  parameters:
+    message: "{{trigger.body.message.text}}"
+    chat_id: "{{trigger.body.message.chat.id}}"

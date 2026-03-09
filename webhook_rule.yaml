@@ -1,0 +1,14 @@
+---
+name: "webhook_hello"
+pack: "default"
+description: "Runs echo when webhook received"
+enabled: true
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "hello"
+criteria: {}
+action:
+  ref: "core.local"
+  parameters:
+    cmd: "echo 'Hello from webhook'"

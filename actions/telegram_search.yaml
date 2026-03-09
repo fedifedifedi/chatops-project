@@ -1,0 +1,17 @@
+
+---
+name: telegram_search
+pack: custom
+description: "Recherche des incidents via Telegram"
+enabled: true
+runner_type: python-script
+entry_point: telegram_search.py
+parameters:
+  message:
+    type: string
+    description: "Message Telegram avec la requête de recherche"
+    required: true
+  chat_id:
+    type: string
+    description: "ID du chat Telegram"
+    required: true

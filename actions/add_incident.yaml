@@ -1,0 +1,24 @@
+---
+name: "add_incident"
+pack: "custom"
+description: "Ajoute un incident dans la base vectorielle Chroma"
+enabled: true
+runner_type: "python-script"
+entry_point: "add_incident.py"
+parameters:
+  description:
+    type: "string"
+    required: true
+    description: "Description de l'incident (message d'erreur, logs...)"
+  solution:
+    type: "string"
+    required: true
+    description: "Solution appliquée ou commentaire"
+  service:
+    type: "string"
+    required: false
+    description: "Service concerné (ex: rundeck, st2web, ...)"
+  severity:
+    type: "string"
+    required: false
+    description: "Niveau de gravité (low, medium, high)"

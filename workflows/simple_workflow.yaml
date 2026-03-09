@@ -1,0 +1,28 @@
+---
+chain:
+  -
+    name: "step1"
+    ref: "core.local"
+    parameters:
+ ---
+chain:
+  -
+    name: "step1"
+    ---
+chain:
+  -
+    name: "step1"
+    ref: "core.local"
+    parameters:
+      cmd: "echo 'Étape 1: {{message}}'"
+  -
+    name: "step2"
+    ref: "core.http"
+    parameters:
+      url: "https://api.github.com"
+      method: "GET"
+  -
+    name: "step3"
+    ref: "core.local"
+    parameters:
+      cmd: "echo 'Workflow terminé'"

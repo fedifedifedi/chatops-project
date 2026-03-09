@@ -1,0 +1,24 @@
+---
+name: "add_incident_qdrant"
+pack: "custom"
+description: "Ajoute un incident dans Qdrant"
+enabled: true
+runner_type: "python-script"
+entry_point: "add_incident_qdrant.py"
+parameters:
+  description:
+    type: "string"
+    required: true
+    description: "Description de l'incident"
+  solution:
+    type: "string"
+    required: true
+    description: "Solution appliquée"
+  service:
+    type: "string"
+    required: false
+    description: "Service concerné"
+  severity:
+    type: "string"
+    required: false
+    description: "Gravité (low, medium, high)"

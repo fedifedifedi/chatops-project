@@ -1,0 +1,13 @@
+
+---
+name: "simple_workflow"
+pack: "default"
+description: "Un workflow simple avec deux étapes"
+enabled: true
+entry_point: "workflows/simple_workflow.yaml"
+runner_type: "action-chain"
+parameters:
+  message:
+    type: "string"
+    default: "Hello"
+    position: 0

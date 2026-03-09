@@ -1,0 +1,22 @@
+---
+name: "rundeck_jobs"
+pack: "custom"
+description: "Interagir avec l'API Rundeck (lister/exécuter des jobs)"
+enabled: true
+runner_type: "python-script"
+entry_point: "rundeck_jobs.py"
+parameters:
+  action:
+    type: "string"
+    required: true
+    enum: ["list", "run"]
+    description: "Action à effectuer : 'list' pour lister les jobs, 'run' 
+pour exécuter un job"
+  project:
+    type: "string"
+    required: false
+    description: "Nom du projet (nécessaire pour l'action 'list')"
+  job_id:
+    type: "string"
+    required: false
+    description: "ID du job (nécessaire pour l'action 'run')"

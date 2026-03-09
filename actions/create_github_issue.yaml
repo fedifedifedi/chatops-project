@@ -1,0 +1,25 @@
+---
+name: "create_github_issue"
+pack: "custom"
+description: "Crée une issue GitHub"
+enabled: true
+runner_type: "python-script"
+entry_point: "create_github_issue.py"
+parameters:
+  title:
+    type: "string"
+    required: true
+    description: "Titre de l'issue"
+  body:
+    type: "string"
+    required: true
+    description: "Description de l'issue"
+  labels:
+    type: "array"
+    required: false
+    description: "Labels à appliquer (ex: ['bug', 'critical'])"
+  repo:
+    type: "string"
+    required: false
+    description: "Dépôt au format 'owner/repo' (par défaut celui de la 
+config)"

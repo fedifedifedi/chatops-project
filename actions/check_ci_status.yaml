@@ -1,0 +1,21 @@
+---
+name: check_ci_status
+pack: custom
+description: "Vérifie le statut CI d'un commit GitHub"
+enabled: true
+runner_type: python-script
+entry_point: check_ci_status.py
+parameters:
+  repo:
+    type: string
+    description: "Nom du dépôt (ex: user/repo)"
+    required: true
+  commit_sha:
+    type: string
+    description: "SHA du commit à vérifier"
+    required: true
+  branch:
+    type: string
+    description: "Nom de la branche"
+    required: false
+    default: "main"

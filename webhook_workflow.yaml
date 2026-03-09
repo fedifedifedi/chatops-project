@@ -1,0 +1,14 @@
+---
+name: "webhook_workflow"
+pack: "default"
+description: "Déclenche le workflow simple sur webhook"
+enabled: true
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "workflow"
+criteria: {}
+action:
+  ref: "default.simple_workflow"
+  parameters:
+    message: "{{trigger.body.message}}"

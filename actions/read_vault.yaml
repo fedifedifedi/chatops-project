@@ -1,0 +1,12 @@
+---
+name: "read_vault"
+pack: "custom"
+description: "Lit un secret dans Vault (version personnalisée)"
+enabled: true
+runner_type: "python-script"
+entry_point: "read_vault.py"
+parameters:
+  path:
+    type: "string"
+    required: true
+    position: 0

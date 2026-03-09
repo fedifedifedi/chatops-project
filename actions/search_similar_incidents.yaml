@@ -1,0 +1,17 @@
+---
+name: "search_similar_incidents"
+pack: "custom"
+description: "Recherche des incidents similaires à une description"
+enabled: true
+runner_type: "python-script"
+entry_point: "search_similar_incidents.py"
+parameters:
+  query:
+    type: "string"
+    required: true
+    description: "Description de l'erreur à rechercher"
+  top_k:
+    type: "integer"
+    required: false
+    default: 5
+    description: "Nombre de résultats à retourner"

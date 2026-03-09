@@ -1,0 +1,17 @@
+---
+name: "search_incidents"
+pack: "custom"
+description: "Recherche des incidents similaires"
+enabled: true
+runner_type: "python-script"
+entry_point: "search_incidents.py"
+parameters:
+  query_text:
+    type: "string"
+    required: true
+    description: "Texte de la requête"
+  top_k:
+    type: "integer"
+    required: false
+    default: 5
+    description: "Nombre de résultats"

@@ -1,0 +1,14 @@
+---
+name: "github_repos"
+pack: "custom"
+description: "Liste les dépôts GitHub d'un utilisateur en utilisant le 
+token Vault"
+enabled: true
+runner_type: "python-script"
+entry_point: "github_repos.py"
+parameters:
+  username:
+    type: "string"
+    required: true
+    description: "Nom d'utilisateur GitHub"
+    position: 0
