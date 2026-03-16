@@ -38,3 +38,6 @@ Temporary Items
 *.backup
 *.bak
 backup/
+st2-docker/
+awx/
+awx-operator/
