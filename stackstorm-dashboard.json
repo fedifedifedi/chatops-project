@@ -1,0 +1,58 @@
+{
+  "dashboard": {
+    "title": "StackStorm Logs",
+    "uid": "stackstorm-logs",
+    "panels": [
+      {
+        "id": 1,
+        "title": "📊 Tous les logs StackStorm",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 0},
+        "targets": [{"expr": "{container_name=~\"st2.+\"}", "refId": "A"}]
+      },
+      {
+        "id": 2,
+        "title": "📨 Commandes Telegram",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+        "targets": [{"expr": "{container_name=\"st2-sensorcontainer\"} |= \"Dispatching trigger\"", "refId": "B"}]
+      },
+      {
+        "id": 3,
+        "title": "🎫 Actions Jira",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+        "targets": [{"expr": "{container_name=~\"st2.+\"} |= \"jira\"", "refId": "C"}]
+      },
+      {
+        "id": 4,
+        "title": "🐙 Actions GitHub",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+        "targets": [{"expr": "{container_name=~\"st2.+\"} |= \"github\"", "refId": "D"}]
+      },
+      {
+        "id": 5,
+        "title": "⚡ Commandes /run",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+        "targets": [{"expr": "{container_name=~\"st2.+\"} |= \"/run\"", "refId": "E"}]
+      },
+      {
+        "id": 6,
+        "title": "✅ Approbations",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 24},
+        "targets": [{"expr": "{container_name=~\"st2.+\"} |= \"approve\"", "refId": "F"}]
+      },
+      {
+        "id": 7,
+        "title": "🔍 Recherches",
+        "type": "logs",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 24},
+        "targets": [{"expr": "{container_name=~\"st2.+\"} |= \"search\"", "refId": "G"}]
+      }
+    ]
+  },
+  "overwrite": true
+}
